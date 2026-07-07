@@ -1,0 +1,37 @@
+.poster {
+  min-width: 230px;
+  max-width: 230px;
+  min-height: 350px;
+  max-height: 350px;
+  width: 100%;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+.dot-skeleton {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  flex: 0;
+  & span{
+    color: $brand-color;
+  }
+
+
+  @media (width <= 1200px) {
+    font-size: 1.8rem;
+  }
+}
+
+img {
+  @extend .poster;
+}
+

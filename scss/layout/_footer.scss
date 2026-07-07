@@ -1,0 +1,142 @@
+.footer {
+  padding: 30px 0;
+  height: 100%;
+  background-color: $bg-secondary-color;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 220px;
+    min-width: 180px;
+  }
+
+  &__link {
+    color: $color-secondary;
+    transition: color 0.3s ease-out;
+    font-size: 1.2rem;
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 180px;
+    min-width: 160px;
+  }
+
+  &__menu {
+    transition: color 0.3s ease-out;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  &__social-link {
+    color: $color-secondary;
+    transition: color 0.3s ease-out;
+    font-size: 1.2rem;
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__social-title {
+    transition: color 0.3s ease-out;
+    font-size: 1.2rem;
+  }
+
+  &__universe {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 220px;
+    min-width: 180px;
+  }
+
+  &__universe-title {
+    transition: color 0.3s ease-out;
+    font-size: 1.2rem;
+  }
+
+  &__universe-link {
+    color: $color-secondary;
+    transition: color 0.3s ease-out;
+    font-size: 1.2rem;
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__about {
+    margin-top: 20px;
+
+    border-top: 2px solid $bg-main-color;
+    padding-top: 20px;
+
+    &-text {
+      color: $color-secondary;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      letter-spacing: 0.5px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+
+  @media (width <= 768px) {
+    padding: 20px 0;
+
+    &__top {
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__nav,
+    &__social,
+    &__universe {
+      align-items: center;
+      text-align: center;
+      flex-basis: 100%;
+      min-width: 0;
+    }
+
+    &__link,
+    &__menu,
+    &__social-link,
+    &__universe-link {
+      font-size: 1rem;
+    }
+
+    &__about {
+      &-text {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  @media (width <= 576px) {
+    padding: 15px 0;
+
+    &__top {
+      gap: 12px;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+  }
+}

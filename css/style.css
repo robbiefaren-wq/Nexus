@@ -1,0 +1,998 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #131112;
+  height: 100%;
+  color: #f2f4ff;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #f2f4ff;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+li {
+  list-style: none;
+  font-family: inherit;
+}
+
+nav {
+  list-style-type: none;
+}
+
+select, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: inherit;
+  color: inherit;
+}
+
+.poster, img {
+  min-width: 230px;
+  max-width: 230px;
+  min-height: 350px;
+  max-height: 350px;
+  width: 100%;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+.dot-skeleton, .timeline__item::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  flex: 0;
+}
+.logo span {
+  color: rgba(137, 28, 187, 0.8274509804);
+}
+@media (width <= 1200px) {
+  .logo {
+    font-size: 1.8rem;
+  }
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-color: #2e2e3a;
+  margin-top: 0;
+  min-height: 100px;
+  max-height: 100px;
+}
+.header__nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex: 0 1 auto;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.header__link {
+  color: #c0c5c1;
+  transition: color 0.3s ease-out;
+  font-size: 1.2rem;
+}
+.header__link:hover {
+  color: #f2f4ff;
+}
+.header .current {
+  border-bottom: 2px solid rgba(137, 28, 187, 0.8274509804);
+  color: #f2f4ff;
+}
+.header__btn {
+  padding: 10px 20px;
+  background-color: rgba(137, 28, 187, 0.8274509804);
+  color: #f2f4ff;
+  border-radius: 40px;
+  border: none;
+}
+@media (width <= 1200px) {
+  .header .container {
+    padding-inline: 60px;
+  }
+  .header__nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex: 0 1 auto;
+  }
+  .header__link {
+    color: #c0c5c1;
+    transition: color 0.3s ease-out;
+    font-size: 1.1rem;
+  }
+  .header__link:hover {
+    color: #f2f4ff;
+  }
+}
+@media (width <= 768px) {
+  .header {
+    max-height: 300px;
+  }
+  .header .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+}
+@media (width <= 576px) {
+  .header {
+    max-height: 100%;
+  }
+  .header .container {
+    gap: 15px;
+    max-width: 450px;
+  }
+  .header__nav {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .header__btn {
+    padding: 10px 20px;
+    background-color: rgba(137, 28, 187, 0.8274509804);
+    color: #f2f4ff;
+    border-radius: 70px;
+    border: none;
+  }
+}
+
+.footer {
+  padding: 30px 0;
+  height: 100%;
+  background-color: #2e2e3a;
+}
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+.footer__link {
+  color: #c0c5c1;
+  transition: color 0.3s ease-out;
+  font-size: 1.2rem;
+}
+.footer__link:hover {
+  color: #f2f4ff;
+}
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 180px;
+  min-width: 160px;
+}
+.footer__menu {
+  transition: color 0.3s ease-out;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.footer__social-link {
+  color: #c0c5c1;
+  transition: color 0.3s ease-out;
+  font-size: 1.2rem;
+}
+.footer__social-link:hover {
+  color: #f2f4ff;
+}
+.footer__social-title {
+  transition: color 0.3s ease-out;
+  font-size: 1.2rem;
+}
+.footer__universe {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+.footer__universe-title {
+  transition: color 0.3s ease-out;
+  font-size: 1.2rem;
+}
+.footer__universe-link {
+  color: #c0c5c1;
+  transition: color 0.3s ease-out;
+  font-size: 1.2rem;
+}
+.footer__universe-link:hover {
+  color: #f2f4ff;
+}
+.footer__about {
+  margin-top: 20px;
+  border-top: 2px solid #131112;
+  padding-top: 20px;
+}
+.footer__about-text {
+  color: #c0c5c1;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (width <= 768px) {
+  .footer {
+    padding: 20px 0;
+  }
+  .footer__top {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer__nav, .footer__social, .footer__universe {
+    align-items: center;
+    text-align: center;
+    flex-basis: 100%;
+    min-width: 0;
+  }
+  .footer__link, .footer__menu, .footer__social-link, .footer__universe-link {
+    font-size: 1rem;
+  }
+  .footer__about-text {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+@media (width <= 576px) {
+  .footer {
+    padding: 15px 0;
+  }
+  .footer__top {
+    gap: 12px;
+  }
+  .footer__title {
+    font-size: 1rem;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: rgba(137, 28, 187, 0.8274509804);
+  color: #f2f4ff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.2s ease-out;
+}
+.btn:hover {
+  background-color: #a32bdb;
+}
+@media (width <= 1200px) {
+  .btn {
+    padding: 5px 20px;
+    background-color: rgba(137, 28, 187, 0.8274509804);
+    color: #f2f4ff;
+    border-radius: 20px;
+    border: none;
+  }
+}
+@media (width <= 576px) {
+  .btn {
+    padding: 5px 10px;
+    background-color: rgba(137, 28, 187, 0.8274509804);
+    color: #f2f4ff;
+    border-radius: 20px;
+    border: none;
+  }
+}
+
+.card {
+  max-width: 260px;
+  width: 100%;
+  min-height: 500px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: center;
+}
+.card:hover {
+  opacity: 1;
+  transform: translateY(-10px);
+  box-shadow: 2px 2px 10px rgba(137, 28, 187, 0.8274509804);
+}
+
+.movie-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(27, 22, 22, 0.658), #131112), url(../assets/posters/hero-poster-avengers-age-of-ultron.webp);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.hero__wrapper {
+  padding: 120px 0;
+}
+.hero__content {
+  max-width: 750px;
+}
+.hero__title {
+  margin-bottom: 40px;
+  font-size: 6rem;
+  font-weight: 800;
+}
+.hero__desc {
+  color: #c0c5c1;
+  font-size: 1.1rem;
+}
+.hero__btn-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 60px;
+}
+.hero__btn {
+  padding: 20px 50px;
+  background-color: rgba(137, 28, 187, 0.8274509804);
+  color: #f2f4ff;
+  border-radius: 50px;
+  border: none;
+}
+
+.popular-movies {
+  padding: 40px 0;
+}
+.popular-movies__title {
+  font-size: 2rem;
+}
+.popular-movies__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 100px 20px;
+}
+.popular-movies__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0c5c1;
+  font-size: 0.8rem;
+}
+
+.popular-series__grid {
+  display: flex;
+  gap: 50px;
+  padding: 30px 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.popular-series__title {
+  font-size: 2rem;
+}
+.popular-series__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0c5c1;
+  font-size: 0.8rem;
+}
+
+@media (width <= 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+  .hero {
+    min-height: 100vh;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(27, 22, 22, 0.658), #131112), url(../assets/posters/hero-poster-avengers-age-of-ultron.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .hero__title {
+    margin-bottom: 35px;
+    font-size: 4rem;
+  }
+  .hero__desc {
+    font-size: 1rem;
+  }
+  .hero__btn-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+  }
+  .hero__btn {
+    padding: 10px 30px;
+    background-color: rgba(137, 28, 187, 0.8274509804);
+    color: #f2f4ff;
+    border-radius: 50px;
+    border: none;
+  }
+  .popular-movies {
+    padding: 10px 0;
+  }
+  .popular-movies__title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .popular-movies__grid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 40px;
+  }
+  .popular-series__grid {
+    display: flex;
+    gap: 40px;
+    padding: 100px 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .popular-series__title {
+    font-size: 1.8rem;
+  }
+  .popular-series__content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c0c5c1;
+    font-size: 0.8rem;
+  }
+}
+@media (width <= 768px) {
+  .container {
+    max-width: 600px;
+  }
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero__btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .popular-movies__title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .popular-movies__grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (width <= 576px) {
+  .series__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    max-width: 450px;
+  }
+  .popular-movies__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .popular-movies__grid {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+  .popular-movies__title {
+    text-align: center;
+  }
+  .popular-movies__btn {
+    align-self: center;
+  }
+  .popular-series__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+.movies {
+  margin-top: 100px;
+}
+.movies__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.movies__title {
+  font-size: 2.5rem;
+}
+.movies__fillter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.movies__seclect {
+  width: auto;
+  padding-block: 10px;
+  padding-inline: 30px;
+  border-radius: 20px;
+  color: #c0c5c1;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: 1px solid rgba(137, 28, 187, 0.8274509804);
+}
+.movies__option {
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #c0c5c1;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+.movies__option:hover {
+  background-color: #c0c5c1;
+  color: #f2f4ff;
+}
+.movies__btn {
+  padding: 10px 20px;
+  background-color: rgba(137, 28, 187, 0.8274509804);
+  color: #f2f4ff;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+}
+.movies__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 100px 20px;
+}
+.movies__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0c5c1;
+  font-size: 0.8rem;
+}
+
+@media (width <= 1200px) {
+  .movies__header {
+    flex-direction: column;
+  }
+}
+.series {
+  margin-top: 100px;
+}
+.series__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.series__title {
+  font-size: 2.5rem;
+}
+.series__filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.series__select {
+  width: auto;
+  padding-block: 10px;
+  padding-inline: 30px;
+  border-radius: 20px;
+  color: #c0c5c1;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: 1px solid rgba(137, 28, 187, 0.8274509804);
+}
+.series__option {
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #c0c5c1;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+.series__option:hover {
+  background-color: #c0c5c1;
+  color: #f2f4ff;
+}
+.series__btn {
+  padding: 10px 20px;
+  background-color: rgba(137, 28, 187, 0.8274509804);
+  color: #f2f4ff;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+}
+.series__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 100px 20px;
+}
+.series__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0c5c1;
+  font-size: 0.8rem;
+}
+
+@media (width <= 1200px) {
+  .series__header {
+    flex-direction: column;
+  }
+}
+.container {
+  padding: 60px;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  position: relative;
+  padding-block: 50px;
+  max-width: 990px;
+  width: 100%;
+  max-height: 1350px;
+  margin: 0 auto;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: #a32bdb;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+.timeline__item {
+  position: relative;
+  width: 50%;
+  margin-bottom: 40px;
+  display: flex;
+  max-width: 500px;
+  min-height: 220px;
+  max-height: 400px;
+}
+.timeline__item::after {
+  background-color: #a32bdb;
+}
+.timeline__item:nth-child(odd) {
+  margin-right: auto;
+  text-align: right;
+}
+.timeline__item:nth-child(odd)::after {
+  right: -9.5px;
+}
+.timeline__item:nth-child(even) {
+  margin-left: auto;
+  text-align: left;
+}
+.timeline__item:nth-child(even)::after {
+  left: -6px;
+}
+.timeline__content {
+  padding: 30px;
+  width: 100%;
+}
+.timeline__logo {
+  max-height: 160px;
+  min-height: 80px;
+  max-width: 220px;
+  min-width: 120px;
+}
+
+@media (width <= 576px) {
+  .timeline {
+    padding-block: 30px;
+  }
+  .timeline__logo {
+    display: inline-block;
+    max-width: 140px;
+    min-width: 80px;
+    max-height: 120px;
+    width: auto;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .timeline__content {
+    padding: 12px;
+  }
+  .timeline__item {
+    align-items: center;
+  }
+}
+.hero-about {
+  background: linear-gradient(to bottom, rgba(27, 22, 22, 0.658), #131112), url(../../assets/posters/hero-poster-about.webp);
+  width: 100%;
+  min-height: 70vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.hero-about__wrapper {
+  margin-top: 10%;
+  max-width: 800px;
+}
+.hero-about__title {
+  font-size: 1rem;
+  color: rgba(137, 28, 187, 0.8274509804);
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+.hero-about__title span {
+  color: #f2f4ff;
+  font-size: 5rem;
+}
+.hero-about__desc {
+  font-size: 1.2rem;
+}
+
+.features {
+  margin-top: 100px;
+}
+.features__title {
+  margin-left: 90px;
+  font-size: 1.9rem;
+}
+.features__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+.features__card {
+  background-color: #2e2e3a;
+  flex: 0 0 240px;
+  min-width: 240px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+}
+.features__icon {
+  width: 120px;
+  color: rgba(137, 28, 187, 0.8274509804);
+}
+.features__card-title {
+  font-size: 1.2rem;
+}
+.features__desc {
+  font-size: 0.8rem;
+  padding: 10px;
+  color: #c0c5c1;
+}
+
+.franchises {
+  margin-top: 50px;
+}
+.franchises__title {
+  margin-bottom: 50px;
+  font-size: 1.9rem;
+}
+.franchises__wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex: 1 1 auto;
+  padding: 40px;
+}
+.franchises__card {
+  background-color: #2e2e3a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 15px;
+  width: 100%;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0.9;
+}
+.franchises__card:hover {
+  transform: translateY(-10px);
+  opacity: 1;
+}
+.franchises__icon {
+  color: rgba(137, 28, 187, 0.8274509804);
+}
+.franchises__card-title {
+  font-size: 1.2rem;
+}
+.franchises__desc {
+  font-size: 0.8rem;
+  padding: 10px;
+  color: #c0c5c1;
+}
+@media (width <= 1200px) {
+  .franchises {
+    margin-top: 40px;
+  }
+  .franchises .hero-about {
+    background: linear-gradient(to bottom, rgba(27, 22, 22, 0.658), #131112), url(../../assets/posters/hero-poster-avengers-age-of-ultron.webp);
+    min-height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .franchises .hero-about__title {
+    font-size: 1.7rem;
+  }
+  .franchises__wrapper {
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px;
+  }
+}
+@media (width <= 768px) {
+  .franchises .hero-about__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .franchises .hero-about__title {
+    font-size: 1rem;
+    color: rgba(137, 28, 187, 0.8274509804);
+    line-height: 1.3;
+    margin-bottom: 30px;
+  }
+  .franchises .hero-about__title span {
+    color: #f2f4ff;
+    font-size: 5rem;
+  }
+  .franchises .hero-about__desc {
+    font-size: 1.2rem;
+  }
+}
+@media (width <= 576px) {
+  .franchises .franchises .container {
+    justify-content: center;
+    align-items: center;
+  }
+  .franchises .franchises__title {
+    text-align: center;
+  }
+}
+
+@media (width <= 1200) {
+  .features {
+    margin-top: 100px;
+  }
+  .features__title {
+    margin-left: 90px;
+    font-size: 1.9rem;
+  }
+  .features__card {
+    background-color: #2e2e3a;
+    max-width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+  }
+  .features__icon {
+    width: 120px;
+    color: rgba(137, 28, 187, 0.8274509804);
+  }
+  .features__card-title {
+    font-size: 1.2rem;
+  }
+  .features__desc {
+    font-size: 0.8rem;
+    padding: 10px;
+    color: #c0c5c1;
+  }
+}
+@media (width <= 768px) {
+  .hero-about {
+    padding-top: 40px;
+    text-align: center;
+  }
+}
+@media (width <= 576px) {
+  .hero-about__title {
+    font-size: 0.8rem;
+  }
+  .hero-about__title span {
+    color: #f2f4ff;
+    font-size: 4rem;
+  }
+  .hero-about__desc {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}/*# sourceMappingURL=style.css.map */

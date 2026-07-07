@@ -1,0 +1,94 @@
+.header {
+  background-color: $bg-secondary-color;
+  margin-top: 0;
+  min-height: 100px;
+  max-height: 100px;
+
+  &__nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex: 0 1 auto;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  &__link {
+    color: $color-secondary;
+    transition: color 0.3s ease-out;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  .current {
+    border-bottom: 2px solid $brand-color;
+    color: $color-main;
+  }
+
+  &__btn {
+    @include btn($radius: 40px);
+  }
+
+  @media (width <= 1200px) {
+    .container {
+      padding-inline: 60px;
+    }
+
+    &__nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex: 0 1 auto;
+    }
+
+    &__link {
+      color: $color-secondary;
+      transition: color 0.3s ease-out;
+      font-size: 1.1rem;
+
+      &:hover {
+        color: $color-main;
+      }
+    }
+  }
+
+  @media (width <= 768px) {
+    max-height: 300px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+  }
+
+
+  @media (width <= 576px) {
+    max-height: 100%;
+    .container {
+      gap: 15px;
+      max-width: 450px;
+    }
+
+    &__nav{
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    &__btn { 
+      @include btn($radius: 70px);
+    }
+  }
+}

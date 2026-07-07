@@ -1,0 +1,29 @@
+@mixin btn(
+    $padding:10px 20px,
+    $bg:$brand-color,
+    $color:$color-main,
+    $radius:20px
+) {
+  padding: $padding;
+  background-color: $bg;
+  color: $color;
+  border-radius: $radius;
+  border: none;
+
+}
+
+@mixin card-content ($font-size: 0.8rem, $color: $color-secondary, $gap: 10px) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+  color: $color;
+  font-size: $font-size;
+}
+
+@mixin grid ($display) {
+  display: $display;
+}
+
+@mixin theme-timeline ($bg-color) {
+  background-color: $bg-color;
+}
